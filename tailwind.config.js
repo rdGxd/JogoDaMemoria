@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "brand-color": "#EE9430",
-        "brand-color-light": "#EE9430",
+        "brand-color-light": "#ECC839",
         "dark-10": "#15181F",
         "dark-20": "#FFFFFF",
         "support-01": "#2962FF",
@@ -16,7 +16,10 @@ export default {
       },
       fontFamily: {
         OpenSans: ["'Open Sans', sans-serif;"],
-        October: ["'October Crow'"]
+        October: ["'October Crow'"],
+      },
+      backgroundImage: {
+        moon: "url('/src/assets/image/background.png')",
       },
     },
   },

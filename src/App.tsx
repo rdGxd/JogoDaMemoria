@@ -1,7 +1,10 @@
+import { Header, Board } from "./components";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline font-October">Hello world!</h1>
+      <Header />
+      <Board />
     </>
   );
 }
