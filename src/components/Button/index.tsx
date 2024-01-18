@@ -1,11 +1,30 @@
+import { Result } from "../../utils/result";
+
 interface IButton {
   img: string;
   onClick?: () => void;
 }
 
-export const Button = ({ img, onClick }: IButton) => {
-  const handleClick = () => {
-    if (onClick) onClick();
+let primeiroClick: string;
+let segundoClick: string;
+
+export const Button = ({ img }: IButton) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const srcImg = e.currentTarget.children[0].getAttribute("src") as string;
+
+    if (!primeiroClick) return (primeiroClick = srcImg);
+
+    if (!segundoClick) {
+      segundoClick = srcImg;
+
+      if (Result({ primeiroClick, segundoClick })) {
+        primeiroClick = "";
+        segundoClick = "";
+      } else {
+        primeiroClick = "";
+        segundoClick = "";
+      }
+    }
   };
 
   return (
