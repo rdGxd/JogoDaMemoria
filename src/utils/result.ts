@@ -14,10 +14,10 @@ export const Result = ({
   if (primeiroClick === segundoClick) {
     alert("FOI");
     return true;
+  } else {
+    primeiroBloco.classList.remove("hidden");
+    segundoBloco.classList.remove("hidden");
+    alert("ERRADO");
+    return false;
   }
-
-  primeiroBloco.classList.remove("hidden");
-  segundoBloco.classList.remove("hidden");
-  alert("ERRADO");
-  return false;
 };
