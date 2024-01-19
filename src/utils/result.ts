@@ -1,14 +1,23 @@
 interface IResult {
   primeiroClick: string;
   segundoClick: string;
+  primeiroBloco: Element;
+  segundoBloco: Element;
 }
 
-export const Result = ({ primeiroClick, segundoClick }: IResult) => {
+export const Result = ({
+  primeiroClick,
+  segundoClick,
+  primeiroBloco,
+  segundoBloco,
+}: IResult) => {
   if (primeiroClick === segundoClick) {
     alert("FOI");
     return true;
-  } else {
-    alert("ERRADO");
-    return false;
   }
+
+  primeiroBloco.classList.remove("hidden");
+  segundoBloco.classList.remove("hidden");
+  alert("ERRADO");
+  return false;
 };
