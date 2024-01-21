@@ -10,6 +10,7 @@ let segundoClick: string;
 let primeiroBloco: Element;
 let segundoBloco: Element;
 let clickSameBlock: Element | null;
+const arr: string[] = [];
 
 export const Button = ({ img }: IButton) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,12 +18,14 @@ export const Button = ({ img }: IButton) => {
     const selectedBlock = e.currentTarget.children[0];
 
     if (!primeiroClick) {
-      selectedBlock.classList.add("hidden");
-      selectedBlock.parentElement?.setAttribute("disabled", "disabled");
-      clickSameBlock = selectedBlock.parentElement;
-      primeiroClick = srcImg;
-      primeiroBloco = selectedBlock;
-      return;
+      if (!arr.includes(primeiroClick)) {
+        selectedBlock.classList.add("hidden");
+        selectedBlock.parentElement?.setAttribute("disabled", "disabled");
+        clickSameBlock = selectedBlock.parentElement;
+        primeiroClick = srcImg;
+        primeiroBloco = selectedBlock;
+        return;
+      }
     }
 
     if (!segundoClick) {
@@ -31,12 +34,22 @@ export const Button = ({ img }: IButton) => {
       segundoClick = srcImg;
       segundoBloco = selectedBlock;
 
-      Result({
+      const result = Result({
         primeiroClick,
         segundoClick,
         primeiroBloco,
         segundoBloco,
       });
+
+      if (result) {
+        if (!arr.includes(segundoClick)) {
+          arr.push(segundoClick.toString());
+          return;
+        }
+      } else {
+        primeiroBloco.classList.remove("hidden");
+        segundoBloco.classList.remove("hidden");
+      }
 
       clickSameBlock?.removeAttribute("disabled");
       primeiroClick = "";

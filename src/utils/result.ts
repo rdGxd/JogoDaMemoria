@@ -5,21 +5,12 @@ interface IResult {
   segundoBloco: Element;
 }
 
-export const Result = ({
-  primeiroClick,
-  segundoClick,
-  primeiroBloco,
-  segundoBloco,
-}: IResult) => {
-  setTimeout(() => {
-    if (primeiroClick === segundoClick) {
-      alert("FOI");
-      return true;
-    } else {
-      primeiroBloco.classList.remove("hidden");
-      segundoBloco.classList.remove("hidden");
-      alert("ERRADO");
-      return false;
-    }
-  }, 500);
+export const Result = ({ primeiroClick, segundoClick }: IResult) => {
+  if (primeiroClick === segundoClick) {
+    console.log("FOI");
+    return true;
+  } else {
+    console.log("ERRADO");
+    return false;
+  }
 };
