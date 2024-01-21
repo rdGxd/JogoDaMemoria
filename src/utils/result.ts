@@ -11,13 +11,15 @@ export const Result = ({
   primeiroBloco,
   segundoBloco,
 }: IResult) => {
-  if (primeiroClick === segundoClick) {
-    alert("FOI");
-    return true;
-  } else {
-    primeiroBloco.classList.remove("hidden");
-    segundoBloco.classList.remove("hidden");
-    alert("ERRADO");
-    return false;
-  }
+  setTimeout(() => {
+    if (primeiroClick === segundoClick) {
+      alert("FOI");
+      return true;
+    } else {
+      primeiroBloco.classList.remove("hidden");
+      segundoBloco.classList.remove("hidden");
+      alert("ERRADO");
+      return false;
+    }
+  }, 500);
 };

@@ -30,6 +30,7 @@ export const Button = ({ img }: IButton) => {
       selectedBlock.classList.add("hidden");
       segundoClick = srcImg;
       segundoBloco = selectedBlock;
+
       Result({
         primeiroClick,
         segundoClick,
