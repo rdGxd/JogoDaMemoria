@@ -1,3 +1,4 @@
+import { ListImage } from "../../utils/listImage";
 import { Result } from "../../utils/result";
 
 interface IButton {
@@ -44,7 +45,10 @@ export const Button = ({ img }: IButton) => {
       if (result) {
         if (!arr.includes(segundoClick)) {
           arr.push(segundoClick.toString());
-          return;
+          if (arr.length === ListImage.length) {
+            console.log("ACABO");
+            return;
+          }
         }
       } else {
         primeiroBloco.classList.remove("hidden");
