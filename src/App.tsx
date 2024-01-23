@@ -1,4 +1,4 @@
-import { Header, Board } from "./components";
+import { Board, Header } from "./components";
 
 function App() {
   return (
