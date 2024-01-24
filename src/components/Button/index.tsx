@@ -22,8 +22,8 @@ export const Button = ({ img }: IButton) => {
     const srcImg = e.currentTarget.children[1].getAttribute("src") as string;
     const selectedBlock = e.currentTarget.children[0];
 
-    if (!primeiroClick) {
-      if (!arr.includes(primeiroClick)) {
+    if (!arr.includes(srcImg)) {
+      if (!primeiroClick) {
         selectedBlock.classList.add("hidden");
         selectedBlock.parentElement?.setAttribute("disabled", "disabled");
         clickSameBlock = selectedBlock.parentElement;
@@ -31,30 +31,41 @@ export const Button = ({ img }: IButton) => {
         primeiroBloco = selectedBlock;
         return;
       }
-    }
+      if (!segundoClick) {
+        selectedBlock.classList.add("hidden");
+        segundoClick = srcImg;
+        segundoBloco = selectedBlock;
 
-    if (!segundoClick) {
-      selectedBlock.parentElement?.removeAttribute("disabled");
-      selectedBlock.classList.add("hidden");
-      segundoClick = srcImg;
-      segundoBloco = selectedBlock;
-      const result = Result({
-        primeiroClick,
-        segundoClick,
-        primeiroBloco,
-        segundoBloco,
-      });
+        const result = Result({
+          primeiroClick,
+          segundoClick,
+          primeiroBloco,
+          segundoBloco,
+        });
 
-      if (result) {
-        if (!arr.includes(segundoClick)) {
-          arr.push(segundoClick.toString());
-          if (arr.length === ListImage.length) {
-            return setWinner(true);
+        if (result) {
+          if (!arr.includes(segundoClick)) {
+            arr.push(segundoClick);
+            if (arr.length === ListImage.length) {
+              return setWinner(true);
+            }
           }
+        } else {
+          if (arr.includes(primeiroClick)) {
+            primeiroBloco.classList.add("hidden");
+          }
+          if (arr.includes(segundoClick)) {
+            segundoBloco.classList.add("hidden");
+          }
+          if (arr.includes(primeiroClick) && arr.includes(segundoClick)) {
+            primeiroBloco.classList.add("hidden");
+            segundoBloco.classList.add("hidden");
+          }
+
+          clickSameBlock?.removeAttribute("disabled");
+          primeiroBloco.classList.remove("hidden");
+          segundoBloco.classList.remove("hidden");
         }
-      } else {
-        primeiroBloco.classList.remove("hidden");
-        segundoBloco.classList.remove("hidden");
       }
 
       clickSameBlock?.removeAttribute("disabled");
