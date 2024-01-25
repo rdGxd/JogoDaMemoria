@@ -7,12 +7,12 @@
   font-style: normal;
   src:
     local("OpenSans-Regular"),
-    url(/font/OpenSans-Regular.ttf) format("truetype");
+    url(/src/assets/font/OpenSans-Regular.ttf) format("truetype");
 }
 @font-face {
-  font-family: "October Crow";
+  font-family: "'October Crow', sans-serif";
   font-style: normal;
   src:
     local("October"),
-    url(/font/October\ Crow.ttf) format("truetype");
+    url(/src/assets/font/October\ Crow.ttf) format("truetype");
 }
