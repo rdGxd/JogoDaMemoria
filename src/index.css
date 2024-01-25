@@ -10,9 +10,9 @@
     url(/src/assets/font/OpenSans-Regular.ttf) format("truetype");
 }
 @font-face {
-  font-family: "'October Crow', sans-serif";
+  font-family: "October Crow";
   font-style: normal;
   src:
     local("October"),
-    url(/src/assets/font/October\ Crow.ttf) format("truetype");
+    url(/src/assets/font/October-Crow.ttf) format("truetype");
 }
