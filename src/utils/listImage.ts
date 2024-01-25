@@ -1,13 +1,13 @@
 export const ListImage = [
-  "/image/01.png",
-  "/image/02.png",
-  "/image/03.png",
-  "/image/04.png",
-  "/image/05.png",
-  "/image/06.png",
-  "/image/07.png",
-  "/image/08.png",
-  "/image/09.png",
+  "/src/assets/image/01.png",
+  "/src/assets/image/02.png",
+  "/src/assets/image/03.png",
+  "/src/assets/image/04.png",
+  "/src/assets/image/05.png",
+  "/src/assets/image/06.png",
+  "/src/assets/image/07.png",
+  "/src/assets/image/08.png",
+  "/src/assets/image/09.png",
 ];
 
 export function shuffleArray() {

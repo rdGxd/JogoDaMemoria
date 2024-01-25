@@ -72,7 +72,7 @@ export const Button = ({ img }: IButton) => {
   return (
     <>
       {winner && (
-        <div className="absolute">
+        <div className="absolute ">
           <Winner />
         </div>
       )}
@@ -84,7 +84,7 @@ export const Button = ({ img }: IButton) => {
         onClick={handleClick}
         className="flex h-24 w-24 content-center items-center justify-center rounded-2xl bg-dark-10 px-6 py-4 text-center"
       >
-        <span className="absolute  h-24 w-24 justify-center rounded-2xl border border-[#EE9430] bg-[#2B0E11] text-center font-October text-8xl text-brand-color-light">
+        <span className="absolute h-24 w-24 justify-center rounded-2xl border border-[#EE9430] bg-[#2B0E11] text-center font-October text-8xl text-brand-color-light">
           ?
         </span>
         <img src={img} alt="" />
