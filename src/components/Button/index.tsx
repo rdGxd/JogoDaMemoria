@@ -44,21 +44,16 @@ export const Button = ({ img }: IButton) => {
         });
 
         if (result) {
-          if (!arr.includes(segundoClick)) {
-            arr.push(segundoClick);
-            if (arr.length === ListImage.length) {
-              return setWinner(true);
-            }
+          arr.push(segundoClick);
+          if (arr.length === ListImage.length) {
+            return setWinner(true);
           }
         } else {
           if (arr.includes(primeiroClick)) {
             primeiroBloco.classList.add("hidden");
           }
+
           if (arr.includes(segundoClick)) {
-            segundoBloco.classList.add("hidden");
-          }
-          if (arr.includes(primeiroClick) && arr.includes(segundoClick)) {
-            primeiroBloco.classList.add("hidden");
             segundoBloco.classList.add("hidden");
           }
 
