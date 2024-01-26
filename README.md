@@ -11,7 +11,7 @@
 
 ## Como rodar o projeto
 
-- Clone o repositório ou [acesse](https://jogo-da-memoria-rdgxd.vercel.app/)
+- Clone o repositório ou [Clique aqui](https://jogo-da-memoria-rdgxd.vercel.app/)
 
 ## Comandos Linux:
 
