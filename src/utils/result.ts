@@ -7,10 +7,9 @@ interface IResult {
 
 export const Result = ({ primeiroClick, segundoClick }: IResult) => {
   if (primeiroClick === segundoClick) {
-    console.log("FOI");
     return true;
   } else {
-    console.log("ERRADO");
+    alert("ERRADO");
     return false;
   }
 };

@@ -31,6 +31,7 @@ export const Button = ({ img }: IButton) => {
         primeiroBloco = selectedBlock;
         return;
       }
+
       if (!segundoClick) {
         selectedBlock.classList.add("hidden");
         segundoClick = srcImg;
