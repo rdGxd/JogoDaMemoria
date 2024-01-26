@@ -19,7 +19,7 @@ export default {
         October: ["'October Crow'"],
       },
       backgroundImage: {
-        moon: "url('/src/assets/background.png')",
+        moon: "url('/src/assets/background.svg')",
       },
     },
   },
