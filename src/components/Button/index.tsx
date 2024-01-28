@@ -5,7 +5,6 @@ import { Winner } from "../Winner";
 
 interface IButton {
   img: string;
-  onClick?: () => void;
 }
 
 let primeiroClick: string;
